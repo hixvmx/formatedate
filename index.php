@@ -2,22 +2,47 @@
 
 /* Format Date From (2023-03-17 12:08:33) To (17 March 2023) */
 
-function dateFormat($created_at)
+function dateFormate($created_at)
 {
     // site language it will be arabic or english
     $getLocale = 'en';
 
 
-    // months
-    $months_ar = ['01' => 'يناير','02' => 'فبراير','03' => 'مارس', '04' => 'أبريل', '05' => 'مايو', '06' => 'يونيو','07' => 'يوليو','08' => 'أغسطس','09' => 'سبتمبر','10' => 'أكتوبر','11' => 'نوفمبر','12' => 'ديسمبر'];
-    $months_en = ['01' => 'January','02' => 'February','03' => 'March', '04' => 'April', '05' => 'May', '06' => 'June','07' => 'July','08' => 'August','09' => 'September','10' => 'October','11' => 'November','12' => 'December'];
+    // arabic and english months.
+    $months_ar = [	'01' => 'يناير',
+					'02' => 'فبراير',
+					'03' => 'مارس',
+					'04' => 'أبريل',
+					'05' => 'مايو',
+					'06' => 'يونيو',
+					'07' => 'يوليو',
+					'08' => 'أغسطس',
+					'09' => 'سبتمبر',
+					'10' => 'أكتوبر',
+					'11' => 'نوفمبر',
+					'12' => 'ديسمبر'];
+					
+    $months_en = [	'01' => 'January',
+					'02' => 'February',
+					'03' => 'March',
+					'04' => 'April',
+					'05' => 'May',
+					'06' => 'June',
+					'07' => 'July',
+					'08' => 'August',
+					'09' => 'September',
+					'10' => 'October',
+					'11' => 'November',
+					'12' => 'December'];
 
 
-    $createdAt = explode(' ', $created_at);
-    $date = $createdAt[0]; // get date
-    $time = $createdAt[1]; // get time
+	// get date and time.
+    $createdat = explode(' ', $created_at);
+    $date = $createdat[0]; // get date
+    $time = $createdat[1]; // get time
 
 
+	// get day and month and year,
     $dt = explode('-', $date);
     $dt_Y = $dt[0];
     $dt_M = $dt[1];
